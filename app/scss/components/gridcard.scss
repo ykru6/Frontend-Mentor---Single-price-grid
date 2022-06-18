@@ -1,0 +1,71 @@
+@use '../util' as *;
+@use '../globals' as *;
+
+.container__card {
+    grid-area: one;
+}
+
+.container__subs {
+    grid-area: two;
+}
+
+.container__qna {
+    grid-area: three;
+}
+
+@include breakpoint-down(small) {
+    .attribution {
+        display: none;
+    }
+}
+
+@include breakpoint(medium) {
+    .container__card {
+        border-radius: 8px 0 0 8px;
+    }
+
+    .container__subs {
+        .subs__amt {
+            margin: rem(32) 0 rem(28);
+        }
+
+        .subs__desc {
+            margin-bottom: 2.25rem;
+        }
+    }
+
+    .container__qna {
+        border-radius: 0 8px 8px 0;
+    }
+
+}
+
+@include breakpoint(large) {
+    .container__card {
+        border-radius: 8px 8px 0 0;
+    }
+
+    .container__subs {
+        border-bottom-left-radius: 8px;
+
+        .subs__amt {
+            margin: rem(12) 0 0;
+        }
+
+        .subs__desc {
+            margin-bottom: rem(26);
+        }
+    }
+
+    .container__qna {
+        border-radius: 0 0 8px 0;
+
+        .qna__ans {
+            margin-right: rem(68);
+        }
+    }
+
+    :is(.container__card, .container__subs, .container__qna) {
+        padding: 2.25rem;
+    }
+}

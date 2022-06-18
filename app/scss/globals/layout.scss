@@ -1,0 +1,31 @@
+@use '../util' as *;
+
+.content__container {
+	padding: 0;
+	max-width: rem(652);
+	margin: 0 auto;
+
+	display: grid;
+	grid-auto-columns: 1fr;
+	grid-template-areas: 
+	 'one'
+	 'two'
+	 'three'
+	;
+
+	border-radius: 8px;
+	box-shadow: 0 15px 30px rgba(82, 101, 114, 0.212);
+
+	@include breakpoint(medium) {
+		grid-template-areas: 
+		 'one two three'
+		;
+	}
+
+	@include breakpoint(large) {
+		grid-template-areas: 
+		 'one one'
+		 'two three'
+		;
+	}
+}
